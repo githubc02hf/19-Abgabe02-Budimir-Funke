@@ -1,0 +1,11 @@
+#build.properties file
+projectName=19-Abgabe02-Budimir-Funke
+package=at.fhj.iit
+arg=Sir
+buildDir=build-ant
+distDir=dist
+libDir=lib
+srcDir=src
+jarName=Hello.jar
+mainName=Main
+

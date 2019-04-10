@@ -1,36 +1,37 @@
-<project name="19-Abgabe02-Budimir-Funke">
+<project name="${projectName}">
+<property file="build.properties"/>
     
   <target name="init">
-    <mkdir dir="build-ant"/>
-    <mkdir dir="lib"/>
-    <mkdir dir="dist"/>
+    <mkdir dir="${buildDir}"/>
   </target>
 
-   <target name="clean">
-    <delete dir="build-ant"/>
-    <delete dir="lib"/>
-    <delete dir="dist"/>
+  <target name="clean">
+    <delete dir="${buildDir}"/>
+    <delete dir="${libDir}"/>
+    <delete dir="${distDir}"/>
   </target>
 
   <target name="compile" depends="clean, init">
-    <javac srcdir="src" destdir="build-ant" includeantruntime="false"/>
+    <javac srcdir="${srcDir}" destdir="${buildDir}" includeantruntime="false"/>
   </target>
 
   <target name="jar" depends="compile">
-    <jar destfile="lib/Hello.jar" basedir="build-ant">
-      <manifest>
-        <attribute name="Main-Class" value="at.fhj.iit.Main"/>
+    <mkdir dir="${libDir}"/>
+    <jar destfile="${libDir}/${jarName}" basedir="${buildDir}">
+      <manifest> 
+        <attribute name="Main-Class" value="${package}.${mainName}"/>
       </manifest>
     </jar>
   </target>
 
   <target name="install" depends="jar">
-    <copy file="lib/Hello.jar" todir="dist"/>
+    <mkdir dir="${distDir}"/>
+    <copy file="${libDir}/${jarName}" todir="${distDir}"/>
   </target>
 
   <target name="run" depends="jar">
-    <java jar="lib/Hello.jar" fork="true">
-      <arg value="Sir"/>
+    <java jar="${libDir}/${jarName}" fork="true">
+      <arg value ="${arg}"/>
     </java>
   </target>
 
