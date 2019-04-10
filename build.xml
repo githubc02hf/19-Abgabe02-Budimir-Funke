@@ -28,4 +28,10 @@
     <copy file="lib/Hello.jar" todir="dist"/>
   </target>
 
+  <target name="run" depends="jar">
+    <java jar="lib/Hello.jar" fork="true">
+      <arg value="Sir"/>
+    </java>
+  </target>
+
 </project>
