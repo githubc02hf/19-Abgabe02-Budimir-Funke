@@ -12,4 +12,8 @@
     <delete dir="dist"/>
   </target>
 
+  <target name="compile" depends="clean, init">
+    <javac srcdir="src" destdir="build-ant" includeantruntime="false"/>
+  </target>
+
 </project>
