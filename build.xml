@@ -24,4 +24,8 @@
     </jar>
   </target>
 
+  <target name="install" depends="jar">
+    <copy file="lib/Hello.jar" todir="dist"/>
+  </target>
+
 </project>
