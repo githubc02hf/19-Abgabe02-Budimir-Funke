@@ -6,4 +6,10 @@
     <mkdir dir="dist"/>
   </target>
 
+   <target name="clean">
+    <delete dir="build-ant"/>
+    <delete dir="lib"/>
+    <delete dir="dist"/>
+  </target>
+
 </project>
