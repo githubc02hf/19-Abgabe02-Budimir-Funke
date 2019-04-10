@@ -16,4 +16,12 @@
     <javac srcdir="src" destdir="build-ant" includeantruntime="false"/>
   </target>
 
+  <target name="jar" depends="compile">
+    <jar destfile="lib/Hello.jar" basedir="build-ant">
+      <manifest>
+        <attribute name="Main-Class" value="at.fhj.iit.Main"/>
+      </manifest>
+    </jar>
+  </target>
+
 </project>
