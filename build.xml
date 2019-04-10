@@ -1,0 +1,9 @@
+<project name="19-Abgabe02-Budimir-Funke">
+    
+  <target name="init">
+    <mkdir dir="build-ant"/>
+    <mkdir dir="lib"/>
+    <mkdir dir="dist"/>
+  </target>
+
+</project>
