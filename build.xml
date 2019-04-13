@@ -1,5 +1,5 @@
 <project name="${projectName}">
-<property file="build.properties"/>
+<property file="build.properties.template"/>
     
   <target name="init">
     <mkdir dir="${buildDir}"/>
